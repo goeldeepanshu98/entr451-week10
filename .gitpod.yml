@@ -14,3 +14,23 @@ tasks:
 vscode:
   extensions:
     - vortizhe.simple-ruby-erb
+# .gitpod.yml
+
+env:
+  # Replace 'your-perplexity-api-key' with your actual API key, or set it securely via Gitpod dashboard
+  PERPLEXITY_API_KEY: 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
+
+tasks:
+  - name: Install Perplexity CLI
+    command: |
+      pip install --user --upgrade requests
+      curl -s https://raw.githubusercontent.com/dawid-szewc/perplexity-cli/main/perplexity.py > ~/.local/bin/perplexity
+      chmod +x ~/.local/bin/perplexity
+      echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+      echo 'export PERPLEXITY_API_KEY="${PERPLEXITY_API_KEY}"' >> ~/.bashrc
+      source ~/.bashrc
+
+  - name: Test Perplexity CLI
+    command: perplexity "Say hello from Gitpod!"
+
+# Optionally, add VS Code extensions or other setup as needed

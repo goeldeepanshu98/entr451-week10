@@ -6,5 +6,8 @@
   "editor.tabSize": 2,
   "files.associations": {
     "*.erb": "erb"
+  },
+  "yaml.schemas": {
+    "https://gitpod.io/schemas/gitpod-schema.json": "file:///workspace/entr451-week10/.gitpod.yml"
   }
 }
